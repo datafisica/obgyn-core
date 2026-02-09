@@ -1,11 +1,16 @@
 <?php
 
+
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+
+
 class AppServiceProvider extends ServiceProvider
 {
+
+    public const HOME = '/dashboard';
     /**
      * Register any application services.
      */
