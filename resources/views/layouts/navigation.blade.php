@@ -19,8 +19,8 @@
                     {{ __('Registrar Usuario') }}
                     </x-nav-link>
                     -->
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                      {{ __('Lista de Usuarios') }}
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                      {{ __('Usuarios') }}
                     </x-nav-link>
                     <x-nav-link :href="route('patients.index')" :active="request()->routeIs('patients.*')">
                       {{ __('Pacientes') }}

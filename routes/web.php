@@ -19,7 +19,8 @@ Route::get('/dashboard', function () {
        }); */
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    // Usuarios (CRUD)
+    Route::resource('users', UserController::class)->except(['show'])->names('users');
 
     // Pacientes (CRUD)
     Route::resource('patients', PatientController::class)->names('patients');
