@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\CitaController;
 
 Route::get('/', function () {
 //    return view('welcome');
@@ -26,6 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('patients', PatientController::class)->names('patients');
 });
 
+
+Route::get('/citas', [CitaController::class, 'index'])->middleware(['auth', 'verified'])->name('citas.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
